@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- linha para fazer o link com o CSS -->
+    <link rel="stylesheet" href="programação.css" />
+    <title>E•wallet</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+
+  <body>
+    <!-- cabeçalho -->
+    <div id="header">
+      <div class="content">
+        <img src="asset/Logo (2).svg" alt="" />
+      </div>
+    </div>
+
+    <!-- cards -->
+    <div id="cards" class="content">
+      <div class="card">
+        <div class="card-tittle in">
+          <span>Entradas</span>
+          <i data-feather="arrow-up-circle"></i>
+        </div>
+        <h1>R$ 7.000,00</h1>
+      </div>
+      <div class="card">
+        <div class="card-tittle out">
+          <span>Saídas</span>
+          <i data-feather="arrow-down-circle"></i>
+        </div>
+        <h1>R$ 2.000,00</h1>
+      </div>
+      <div class="card total">
+        <div class="card-tittle">
+          <span>Total</span>
+          <i data-feather="dollar-sign"></i>
+        </div>
+        <h1>R$ 5.000,00</h1>
+      </div>
+    </div>
+
+    <!-- tabela -->
+    <div id="tabela" class="content">
+      <table class="content">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Casas Bahia</td>
+            <td>R$ 5.000,00</td>
+            <td class="green"></class><i data-feather="dollar-sign"></i>Vendas</td>
+            <td>04/02/2021</td>
+          </tr>
+          <tr>
+            <td>Butequinho do Urutau</td>
+            <td>R$ 25,00</td>
+            <td class="red"><i data-feather="coffee"></i>Bebidas</td>
+            <td>13/08/2021</td>
+          </tr>
+          <tr>
+            <td>American Japan</td>
+            <td>R$ 40,00</td>
+            <td class="green"><i data-feather="pie-chart"></i>Alimentos</td>
+            <td>13/08/2021</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="addButton">
+        <a><i data-feather="plus"></i></a>
+    </div>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

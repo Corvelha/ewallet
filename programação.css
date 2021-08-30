@@ -40,23 +40,25 @@ body {
   margin: auto;
 }
 
-#popup form{
+#popup form {
   display: flex;
   align-items: initial;
   flex-direction: column;
 }
 
-#popup form div{
+#popup form div {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#popup form a{
+#popup form a {
   text-align: end;
 }
 
-form input, forme select, form button{
+form input,
+forme select,
+form button {
   padding: 10px;
   border-radius: 5px;
   margin: auto 5px;
@@ -66,24 +68,25 @@ form input, forme select, form button{
   transition: border-color linear 0.2s;
 }
 
-form input:focus, form select:focus{
+form input:focus,
+form select:focus {
   border-color: #7c0061;
 }
 
-form label{
+form label {
   font-weight: 500;
   color: #969cb2;
   font-size: 14px;
 }
 
-form button{
+form button {
   background-color: #7c0061;
   color: #fff;
   margin-top: 30px;
   transition: background linear 0.2s;
 }
 
-form button:hover{
+form button:hover {
   background-color: #570044;
 }
 

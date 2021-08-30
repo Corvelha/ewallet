@@ -1,3 +1,4 @@
+//transações fictícias cadastradas (criadas manualmente)
 var transactions = [
     {
         title: "Desenvolvimento",
@@ -45,8 +46,11 @@ var transactions = [
           </tr>
 
  */}
+
+ //adiciona o corpo da tabela na variável "table"
  var table = document.querySelector("#tabela tbody");
 
+ //mapeamento das transações
  transactions.map(transaction => {
      var row = document.createElement("tr");
 
@@ -74,18 +78,31 @@ var transactions = [
 var addBtn = document.querySelector("#addButton a");
 var popup = document.querySelector("#popupbackground");
 var closeBtn = document.querySelector("#popup form a");
+var form = document.querySelector("form");
 
-addBtn.addEventListener("click", ()=>{
+addBtn.addEventListener("click", ()=> {
     // o que vai acontecer quando clicar no botão "adicionar"
     popup.style.display = "flex";
     popup.style.transition = "display 5s";
 })
 
 closeBtn.addEventListener("click", ()=> {
+    //o que vai acontecer quando clicar no botão fechar
     popup.style.display = "none";
     popup.style.transition = "display 5s";
+    form.reset()
 });
 
+form.addEventListener("submit", (event)=> {
+    event.preventDefault();
+
+    var formData = new FormData(event.target);
+    var {title, currency, identifier, price, category} = Object.fromEntries(formData);
+    
+    console.log(title)
+});
+
+//métodos ou funções
 function moneyFormat(currency, price){
     var value = new Intl.NumberFormat("pt-BR", {
         style: "currency",

@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
-  margin: 0%;
+  margin: 0;
   border: 0;
   padding: 0;
   outline: none;
@@ -9,10 +9,16 @@
   font-weight: 300;
 }
 
+@keyframes fadein{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
 body {
   background-color: #f0f2f5;
-  position: relative;
   height: 100vh;
+  position: relative;
+  animation: fadein 2s;
 }
 
 .content {
@@ -22,12 +28,12 @@ body {
 }
 
 #popupbackground {
-  background-color: rgba(0, 0, 0, 0.788);
+  background-color: rgba(0, 0, 0, 0.726);
   width: 100vw;
   height: 100vh;
   z-index: 5;
   position: absolute;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -35,9 +41,58 @@ body {
 #popup {
   width: 500px;
   padding: 15px;
-  background-color: #fff;
   border-radius: 15px;
+  background-color: #f0f2f5;
+  margin: auto;
 }
+#popup form{
+  display: flex;
+  align-items: initial;
+  flex-direction: column;
+}
+
+#popup form div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#popup form a{
+  text-align: end;
+}
+
+form input, form select, form button {
+  padding: 10px;
+  border-radius: 5px;
+  margin: auto 5px;
+  margin-top: 10px;
+  flex:1;
+  border: 1px solid transparent;
+  transition: border-color linear 0.3s;
+}
+
+form input:focus,
+form select:focus{
+  border-color: #7c0061;
+}
+
+form label{
+  font-weight: 500;
+  color: #969cb2;
+  font-size: 14px;
+}
+
+form button{
+  background-color: #7c0061;
+  color: #fff;
+  margin-top:30px;
+  transition: background linear 0.2s;
+}
+
+form button:hover{
+  background-color: #570044;
+}
+
 
 #header {
   width: 100%;
@@ -63,7 +118,7 @@ body {
   padding: 20px;
   margin-right: 20px;
 }
-.card-tittle {
+.card-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -71,7 +126,7 @@ body {
 }
 
 .in svg {
-  color: #12a45a;
+  color: #12a454;
 }
 
 .out svg {
@@ -114,8 +169,8 @@ tbody tr td {
 }
 
 tbody td svg {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   margin-right: 5px;
 }
 
@@ -131,7 +186,7 @@ tbody td svg {
 
 #addButton a {
   color: #fff;
-  border-radius: 50%;
+  border-radius: 50%; /*Deixa qualquer elemento redondo*/
   padding: 15px;
   display: flex;
   align-items: center;
@@ -142,8 +197,8 @@ tbody td svg {
   background-color: #12a454;
   border-radius: 50%;
   position: absolute;
-  right: 0%;
-  bottom: 0%;
+  right: 0;
+  bottom: 0;
   margin-right: 70px;
   margin-bottom: 50px;
   transition: background 2s;

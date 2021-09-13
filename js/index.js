@@ -1,3 +1,13 @@
+var icons = {
+  "alimento":"coffee",
+  "venda":"dollar-sign",
+  "Saúde":"heart",
+  "transporte":"map-pin",
+  "Educação":"book",
+  "Fatura":"credit-card",
+  "Investimento":"pie-chart"
+};
+
 //transações fictícias cadastradas(criadas manualmente)
 //pegando um item cadastrado/ salvo no bancos de dados local
 var transactions =
@@ -21,7 +31,13 @@ transactions.map((transaction) => {
   price.append(value);
 
   var category = document.createElement("td");
-  category.append(transaction.category);
+  category.classList.add(`${transaction.category==="entrada"?"green":"red"}`)
+  
+  //<i data-feather="dolar-sing"></i>
+  var icon = document.createElement("i");
+  icon.setAttribute("data-feather", icons[transaction.identifier]);
+  category.appendChild(icon);
+  category.append(transaction.identifier);
 
   var date = document.createElement("td");
   date.append(transaction.date);
@@ -32,6 +48,7 @@ transactions.map((transaction) => {
   row.appendChild(date);
 
   table.appendChild(row);
+  
 });
 
 var addBtn = document.querySelector("#addButton a");
@@ -54,14 +71,14 @@ closeBtn.addEventListener("click", () => {
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
+  
   var data = new FormData(event.target);
   var { title, currency, identifier, price, category } =
-    Object.fromEntries(data);
-
+  Object.fromEntries(data);
+  
   //Pegar a data atual no formato Dia(DD), Mês(MM), Ano(YYYY)
   var date = new Date().toLocaleDateString();
-
+  
   var transaction = {
     title,
     price: parseFloat(price),
@@ -74,7 +91,7 @@ form.addEventListener("submit", (event) => {
   };
   //empurrar todas as novas transações junto com as anteriores
   transactions.push(transaction);
-
+  
   //usando uma função do JSON para transformar em string
   localStorage.setItem("@ewallet/transactions", JSON.stringify(transactions));
   //está gravando no banco de dados local um item
@@ -116,3 +133,5 @@ function moneyFormat(currency, price) {
   }).format(price);
   return value;
 }
+
+feather.replace();

@@ -157,6 +157,7 @@ thead th {
   padding-left: 10px;
 }
 
+
 tbody tr {
   border-bottom: 8px solid transparent;
   background-color: #fff;
@@ -177,11 +178,13 @@ tbody td svg {
 .green {
   color: #12a454;
   font-weight: 400;
+  text-transform: capitalize;
 }
 
 .red {
   color: #e83f5b;
   font-weight: 400;
+  text-transform: capitalize;
 }
 
 #addButton a {
